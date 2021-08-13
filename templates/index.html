@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="container my-4">
+        <h3>Welcome to Sentence Checker</h3>
+        <br>
+        <p>
+            Fill out the user-name that has three restrictions.
+            <br>
+            <ul>
+                <li>Must have an upper case letter somewhere in the sentence.</li>
+                <li>Must have an lower case letter somewhere in the sentence.</li>
+                <li>Must have a number at the end of the sentence.</li>
+            </ul>
+        </p>
+    <div class="container my-5">
+        <form action="{{url_for('displayresult')}}">
+            <div class="form-row">
+              <div class="col">
+                <input type="text" class="form-control" name="username" placeholder="enter your username">
+              </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-outline-danger">Submit your User-Name</button>
+            
+          </form>
+    </div>
+
+{% endblock %}
+

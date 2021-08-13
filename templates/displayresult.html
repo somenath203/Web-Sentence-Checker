@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="container my-4">
+
+        <h3>Result :- </h3>
+
+        <br>
+
+        <h5>Your username => {{username}} </h5>
+
+        <br>
+
+        {% if result %}
+           <p>Crongrats...Your username is valid.</p>
+        {% else %}
+        <ul>
+            {% if not upper %}
+               <li>Your username does not contain any upper-case letter.</li>
+            {% endif %}
+
+            {% if not lower %}
+               <li>Your username does not contain any lower-case letter.</li>
+            {% endif %}
+            {% if not digit_end %}
+               <li>Your username does not end with any number.</li>
+            {% endif %}
+        </ul>
+        {% endif %}
+
+{% endblock %}
+
